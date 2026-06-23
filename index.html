@@ -125,10 +125,19 @@
     <a class="font-label-caps text-on-surface-variant hover:text-primary-container transition-all" href="#education">Education</a>
     <a class="bg-primary-container text-on-primary-container px-6 py-2 font-label-caps hover:bg-primary-fixed transition-colors" href="mailto:ghazi.belguith.work@gmail.com">SECURE_CONTACT</a>
   </nav>
-  <div class="md:hidden">
-    <span class="material-symbols-outlined text-primary-container">menu</span>
-  </div>
+  <button id="menu-btn" class="md:hidden flex items-center justify-center w-10 h-10" aria-label="Toggle menu">
+    <span id="menu-icon" class="material-symbols-outlined text-primary-container">menu</span>
+  </button>
 </header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed top-16 left-0 w-full z-40 hidden flex-col bg-surface-container-lowest/95 backdrop-blur-xl border-b border-white/10 md:hidden">
+  <a href="#arsenal" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Arsenal</a>
+  <a href="#timeline" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Operations</a>
+  <a href="#certifications" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Credentials</a>
+  <a href="#education" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Education</a>
+  <a href="mailto:ghazi.belguith.work@gmail.com" class="font-label-caps text-primary-container px-8 py-4">Secure Contact</a>
+</div>
 
 <main class="pt-16">
 
@@ -646,6 +655,21 @@
 </footer>
 
 <script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('hidden');
+    menuIcon.textContent = open ? 'menu' : 'close';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon.textContent = 'menu';
+    });
+  });
+
   // Smooth Scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
