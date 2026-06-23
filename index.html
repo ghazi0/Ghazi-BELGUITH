@@ -116,7 +116,7 @@
 <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/60 backdrop-blur-xl border-b border-white/10 shadow-[0_0_15px_rgba(0,242,255,0.1)] h-16 flex justify-between items-center px-6 md:px-10">
   <div class="flex items-center gap-3 group cursor-pointer">
     <span class="material-symbols-outlined text-primary-container text-2xl group-hover:rotate-90 transition-transform duration-500">security</span>
-    <span class="font-headline-md font-extrabold tracking-tighter text-primary-container" style="font-size:20px">GHAZI.SEC</span>
+    <span class="font-headline-md font-extrabold tracking-tighter text-primary-container" style="font-size:20px">GHAZI BELGUITH</span>
   </div>
   <nav class="hidden md:flex gap-8 items-center">
     <a class="font-label-caps text-primary-container hover:scale-105 transition-all" href="#arsenal">Arsenal</a>
@@ -130,14 +130,67 @@
   </button>
 </header>
 
-<!-- Mobile menu -->
-<div id="mobile-menu" class="fixed top-16 left-0 w-full z-40 hidden flex-col bg-surface-container-lowest/95 backdrop-blur-xl border-b border-white/10 md:hidden">
-  <a href="#arsenal" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Arsenal</a>
-  <a href="#timeline" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Operations</a>
-  <a href="#certifications" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Credentials</a>
-  <a href="#education" class="font-label-caps text-on-surface-variant hover:text-primary-container px-8 py-4 border-b border-outline-variant/20 transition-colors">Education</a>
-  <a href="mailto:ghazi.belguith.work@gmail.com" class="font-label-caps text-primary-container px-8 py-4">Secure Contact</a>
-</div>
+<!-- Sidebar overlay -->
+<div id="sidebar-overlay" class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm hidden md:hidden" aria-hidden="true"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed top-0 right-0 h-full w-72 z-50 bg-surface-container-lowest border-l border-outline-variant/40 flex flex-col md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+  <!-- Sidebar header -->
+  <div class="flex items-center justify-between px-6 py-4 border-b border-outline-variant/30 h-16">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary-container text-xl">security</span>
+      <span class="font-code-sm text-primary-container tracking-widest text-sm font-bold">GHAZI BELGUITH</span>
+    </div>
+    <button id="sidebar-close" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <!-- Nav links -->
+  <nav class="flex flex-col py-6 flex-1">
+    <a href="#arsenal" class="sidebar-link flex items-center gap-4 px-6 py-4 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-container hover:bg-surface-container transition-colors group">
+      <span class="material-symbols-outlined text-primary-container text-lg">terminal</span>
+      <div>
+        <p class="font-label-caps text-[11px] tracking-widest">Arsenal</p>
+        <p class="text-[11px] text-on-surface-variant/60 mt-0.5" style="font-family:Inter">Technical capabilities</p>
+      </div>
+    </a>
+    <a href="#timeline" class="sidebar-link flex items-center gap-4 px-6 py-4 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-container hover:bg-surface-container transition-colors group">
+      <span class="material-symbols-outlined text-primary-container text-lg">timeline</span>
+      <div>
+        <p class="font-label-caps text-[11px] tracking-widest">Operations</p>
+        <p class="text-[11px] text-on-surface-variant/60 mt-0.5" style="font-family:Inter">Professional trajectory</p>
+      </div>
+    </a>
+    <a href="#certifications" class="sidebar-link flex items-center gap-4 px-6 py-4 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-container hover:bg-surface-container transition-colors group">
+      <span class="material-symbols-outlined text-primary-container text-lg">verified</span>
+      <div>
+        <p class="font-label-caps text-[11px] tracking-widest">Credentials</p>
+        <p class="text-[11px] text-on-surface-variant/60 mt-0.5" style="font-family:Inter">Certifications</p>
+      </div>
+    </a>
+    <a href="#education" class="sidebar-link flex items-center gap-4 px-6 py-4 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-container hover:bg-surface-container transition-colors group">
+      <span class="material-symbols-outlined text-primary-container text-lg">school</span>
+      <div>
+        <p class="font-label-caps text-[11px] tracking-widest">Education</p>
+        <p class="text-[11px] text-on-surface-variant/60 mt-0.5" style="font-family:Inter">Academic record</p>
+      </div>
+    </a>
+  </nav>
+
+  <!-- Bottom CTA -->
+  <div class="p-6 border-t border-outline-variant/30">
+    <a href="mailto:ghazi.belguith.work@gmail.com" class="sidebar-link flex items-center justify-center gap-2 w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-[11px] tracking-widest hover:bg-primary-fixed transition-colors">
+      <span class="material-symbols-outlined text-[16px]">mail</span>
+      SECURE_CONTACT
+    </a>
+    <a href="CV_GHAZI_BELGUITH_EN_2025.pdf" download class="flex items-center justify-center gap-2 w-full border border-outline-variant text-on-surface-variant py-3 font-label-caps text-[11px] tracking-widest hover:border-primary-container hover:text-primary-container transition-colors mt-3">
+      <span class="material-symbols-outlined text-[16px]">download</span>
+      DOWNLOAD CV
+    </a>
+    <p class="font-code-sm text-on-surface-variant/40 text-[10px] text-center mt-4">+216 24 339 774</p>
+  </div>
+</aside>
 
 <main class="pt-16">
 
@@ -655,19 +708,33 @@
 </footer>
 
 <script>
-  // Mobile menu toggle
+  // Sidebar toggle
   const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const closeBtn = document.getElementById('sidebar-close');
+
+  function openSidebar() {
+    sidebar.classList.remove('translate-x-full');
+    overlay.classList.remove('hidden');
+    menuIcon.textContent = 'close';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSidebar() {
+    sidebar.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+    menuIcon.textContent = 'menu';
+    document.body.style.overflow = '';
+  }
+
   menuBtn.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('hidden');
-    menuIcon.textContent = open ? 'menu' : 'close';
+    sidebar.classList.contains('translate-x-full') ? openSidebar() : closeSidebar();
   });
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuIcon.textContent = 'menu';
-    });
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+  document.querySelectorAll('.sidebar-link').forEach(a => {
+    a.addEventListener('click', closeSidebar);
   });
 
   // Smooth Scrolling
